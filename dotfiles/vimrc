@@ -1,0 +1,23 @@
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+set number
+set ruler
+set colorcolumn=80
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set background=dark
+set modeline
+
+au FileType python setlocal formatprg=autopep8\ -
+
+map <F2> :Explore<CR>
+
+" add yaml stuffs
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 et
+
+let g:go_version_warning = 0
